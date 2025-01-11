@@ -1,0 +1,12 @@
+<% content_for :title, "Editing List" %>
+
+<h1>Editing List: <%= @list.name %></h1>
+
+<%= form_for @list do |f| %>
+  <%= f.label :name %>
+  <%= f.text_field :name, value: @list.name %>
+
+  <%= f.submit "Update List" %>
+<% end %>
+
+<%= link_to "Back", request.referer || lists_path %> <!-- Voltar para a página anterior ou para a lista -->

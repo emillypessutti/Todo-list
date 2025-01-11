@@ -1,0 +1,131 @@
+/* custom.css */
+body {
+  font-family: Arial, sans-serif;
+  background-color: white; /* Cor de fundo mais suave */
+  color: #555; /* Cor de texto mais suave */
+}
+
+h1 {
+  color: black; /* Cor suave para o título */
+  text-align: center;
+}
+
+/* custom.css */
+button, .btn, .btn-primary {
+  color: black;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 8px; /* Altere o valor conforme desejado para arredondar o botão */
+}
+
+/* custom.css */
+input[type="text"], input, select, textarea {
+  border-radius: 8px; /* Arredonda os campos de entrada */
+  padding: 4px 10px; /* Adiciona um pouco de preenchimento dentro do campo */
+  border: 1px solid #ccc; /* Define a borda */
+  font-size: 14px; /* Ajusta o tamanho da fonte */
+}
+
+#new-list-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Centraliza horizontalmente */
+  justify-content: center; /* Centraliza verticalmente se necessário */
+  gap: 10px; /* Espaçamento entre os campos */
+  margin-bottom: 20px; /* Espaço abaixo do formulário */
+  width: 100%; /* Ocupa toda a largura disponível */
+  max-width: 400px; /* Limita a largura máxima */
+  margin-top: 20px; /* Espaço no topo */
+}
+
+#lists {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+
+#lists div {
+  background-color: white; /* Mantido branco para o fundo dos itens */
+  border: 2px solid transparent; /* Cor de borda mais suave */
+  padding: 15px;
+  border-radius: 8px;
+  width: 250px;
+  box-shadow: 0 4px 13px rgba(13, 28, 13, 0.638);
+}
+
+button {
+  background-color: #E78787; 
+  color: black;
+  padding: 5px 10px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 13px;
+  font-weight: bold;
+}
+
+button:hover {
+  background-color: #DB4A4A; /* Cor mais escura do botão ao passar o mouse */
+}
+
+a {
+  text-decoration: none; /* Remove o sublinhado de todos os links */
+  color: black;
+  font-size: 14px;
+}
+
+.itens {
+  margin-bottom: 20px; /* Adiciona espaço entre os itens */
+}
+
+.delete-button {
+  background-color: #E78787; /* Vermelho pastel */
+  color: black;
+  padding: 5px 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 13px;
+  font-weight: bold;
+  text-decoration: none; /* Remove o sublinhado */
+  margin-right: 20px;
+}
+
+.delete-button:hover {
+  background-color: #DB4A4A; /* Vermelho mais escuro */
+}
+
+.edit-button {
+  background-color: #d1c0d1; /* Vermelho pastel */
+  color: black;
+  padding: 5px 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 13px;
+  font-weight: bold;
+  text-decoration: none; /* Remove o sublinhado */
+}
+
+.edit-button:hover {
+  background-color: #a293a3;
+}
+
+li {
+  display: flex;
+  align-items: center; /* Alinha os itens na mesma linha */
+  margin-bottom: 10px; /* Distância entre os itens */
+  padding-right: 1220px; /* Adiciona um pequeno padding à direita para afastar os botões */
+}
+
+li > .item-name {
+  flex-grow: 1; /* Faz o nome do item ocupar o espaço disponível */
+}
+
+li > .buttons {
+  display: flex;
+  gap: 10px; /* Espaço entre os botões */
+  justify-content: flex-end; /* Garante que os botões fiquem à direita */
+  padding-left: 20px; /* Adiciona um pequeno espaço à esquerda dos botões */
+}

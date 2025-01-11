@@ -1,0 +1,29 @@
+<p style="color: green"><%= notice %></p>
+
+<% content_for :title, "Lists" %>
+
+<h1>Lists</h1>
+
+<!-- Formulário para criar nova lista -->
+<%= form_with(model: List.new, local: true) do |form| %>
+  <div>
+    <%= form.label :name, "Nome da Lista" %>
+    <%= form.text_field :name, class: "form-control" %>
+  </div>
+
+  <div>
+    <%= form.submit "Adicionar Lista", class: "btn btn-primary" %>
+  </div>
+<% end %>
+
+<div id="lists">
+  <% @lists.each do |list| %>
+    <div>
+      <%= render list %>
+      <p>
+        <%= link_to "Show this list", list %>
+        <%= button_to 'Excluir', list, method: :delete, data: { turbo_confirm: "Tem certeza?" }, class: "btn btn-danger" %>
+      </p>
+    </div>
+  <% end %>
+</div>
