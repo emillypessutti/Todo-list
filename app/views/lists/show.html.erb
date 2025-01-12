@@ -1,24 +1,31 @@
 <p style="color: green"><%= notice %></p>
 
+
 <h1><%= @list.name %></h1>
 
-<h2>Itens:</h2>
-<ul>
-  <% @list.items.each do |item| %>
-    <li id="<%= dom_id item %>">  
-      <span class="item-name"><%= item.name %></span> <!-- Nome do item -->
-      <div class="buttons">
-        <%= link_to 'Edit', edit_list_item_path(@list, item), class: 'edit-button' %>
-        <%= link_to 'Delete', list_item_path(@list, item), data: { turbo_method: :delete, turbo_confirm: 'Are you sure?' }, class: 'delete-button' %>
-      </div>
-    </li>
-  <% end %>
-</ul>
+<%= form_with(model: [@list, Item.new], local: true) do |form| %>
+  <div style="display: flex; align-items: justify-content: center; gap: 10px; margin-left: 50px; margin-top: 30px;">
+    <%= form.text_field :name, placeholder: "Add new item", class: "add-item-button" %>
+    <%= form.submit "Save", class: "save-item-button" %>
+    <%= link_to "Go back", lists_path, class: "back-button" %>
+  </div>
+<% end %>
 
-<%= link_to 'Adicionar Novo Item', new_list_item_path(@list), class: "btn btn-primary" %>
-
-<hr>
-
-<div>
-  <%= link_to "Voltar para Listas", lists_path, class: "btn btn-primary" %>
+<div style="margin-left: 50px;">
+  <h2>Items</h2>
 </div>
+
+<ul>
+  <div style="margin-left: 10px;">
+    <% @list.items.each do |item| %>
+      <li id="<%= dom_id item %>">  
+        <span class="item-name"><%= item.name %></span> <!-- Nome do item -->
+        <div class="buttons">
+          <%= link_to 'Edit', edit_list_item_path(@list, item), class: 'edit-button' %>
+          <%= link_to 'Delete', list_item_path(@list, item), data: { turbo_method: :delete, turbo_confirm: 'Are you sure?' }, class: 'delete-item' %>
+        </div>
+      </li>
+    <% end %>
+  </ul>
+
+

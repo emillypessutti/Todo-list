@@ -2,47 +2,121 @@
 body {
   font-family: Arial, sans-serif;
   background-color: white; /* Cor de fundo mais suave */
-  color: #555; /* Cor de texto mais suave */
+  color: black; /* Cor de texto mais suave */
+  margin-top: 50px;
 }
 
 h1 {
   color: black; /* Cor suave para o título */
-  text-align: center;
+  margin-left: 50px;
+  margin-top: 80px;
 }
 
-/* custom.css */
-button, .btn, .btn-primary {
-  color: black;
+.editing-title {
+  margin-top: 130px;
+}
+
+.save-button {
+  background-color: blue;
+  color: white;
   border: none;
-  padding: 5px 10px;
+  font-size: 13px;
+  font-weight: bold;
+  width: auto;
+  padding: 10px 15px;
   border-radius: 8px; /* Altere o valor conforme desejado para arredondar o botão */
 }
 
-/* custom.css */
+.save-item-button {
+  background-color: blue;
+  color: white;
+  font-size: 13px;
+  font-weight: bold;
+  width: auto;
+}
+
+.show-list {
+  background-color: #d9c6d9; 
+  color: black;
+  padding: 5px 10px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 13px;
+  font-weight: bold;
+}
+
+.show-list:hover {
+  background-color: #b2a0b2;
+}
+
+
+.edit-list-button {
+  background-color: #d1c0d1;; /* Vermelho pastel */
+  color: black;
+  padding: 5px 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 13px;
+  font-weight: bold;
+  text-decoration: none; /* Remove o sublinhado */
+}
+
+.edit-list-button:hover {
+  background-color: #a293a3;
+}
+
+.update-list-button {
+  background-color: blue;
+  color: white;
+  font-weight: bold;
+  width: auto;
+}
+
+.back-update-button {
+  background-color: #d9c6d9; 
+  color: black;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 13px;
+  font-weight: bold;
+}
+
+.back-update-button:hover {
+  background-color: #b2a0b2;
+}
+
 input[type="text"], input, select, textarea {
+  border: none;
   border-radius: 8px; /* Arredonda os campos de entrada */
-  padding: 4px 10px; /* Adiciona um pouco de preenchimento dentro do campo */
-  border: 1px solid #ccc; /* Define a borda */
+  box-shadow: 0 3px 12px rgba(190, 190, 190, 0.638);
+  padding: 10px 15px; /* Adiciona um pouco de preenchimento dentro do campo */
+  width: 250px;
   font-size: 14px; /* Ajusta o tamanho da fonte */
 }
 
-#new-list-form {
+/*#new-list-form {
   display: flex;
   flex-direction: column;
-  align-items: center; /* Centraliza horizontalmente */
-  justify-content: center; /* Centraliza verticalmente se necessário */
-  gap: 10px; /* Espaçamento entre os campos */
-  margin-bottom: 20px; /* Espaço abaixo do formulário */
-  width: 100%; /* Ocupa toda a largura disponível */
-  max-width: 400px; /* Limita a largura máxima */
-  margin-top: 20px; /* Espaço no topo */
-}
+  align-items: center; 
+  justify-content: center; 
+  gap: 10px;
+  margin-bottom: 20px; 
+  width: 100%; 
+  max-width: 400px; 
+  margin-top: 20px; 
+} */
 
 #lists {
   display: flex;
   flex-wrap: wrap;
   gap: 20px;
-  justify-content: center;
+  justify-content: left;
+  margin-top: 3px;
+  margin-left: 50px;
 }
 
 #lists div {
@@ -51,8 +125,25 @@ input[type="text"], input, select, textarea {
   padding: 15px;
   border-radius: 8px;
   width: 250px;
-  box-shadow: 0 4px 13px rgba(13, 28, 13, 0.638);
+  box-shadow: 0 6px 17px rgba(190, 190, 190, 0.638);
+  margin-top: 30px;
 }
+
+.back-button {
+  background-color: #d9c6d9; 
+  color: black;
+  padding: 10px 10px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 13px;
+  font-weight: bold;
+}
+
+.back-button:hover {
+  background-color: #b2a0b2;
+}
+
 
 button {
   background-color: #E78787; 
@@ -79,7 +170,7 @@ a {
   margin-bottom: 20px; /* Adiciona espaço entre os itens */
 }
 
-.delete-button {
+.delete-item {
   background-color: #E78787; /* Vermelho pastel */
   color: black;
   padding: 5px 10px;
@@ -92,7 +183,7 @@ a {
   margin-right: 20px;
 }
 
-.delete-button:hover {
+.delete-item:hover {
   background-color: #DB4A4A; /* Vermelho mais escuro */
 }
 
@@ -116,7 +207,7 @@ li {
   display: flex;
   align-items: center; /* Alinha os itens na mesma linha */
   margin-bottom: 10px; /* Distância entre os itens */
-  padding-right: 1220px; /* Adiciona um pequeno padding à direita para afastar os botões */
+  padding-right: 1170px; /* Adiciona um pequeno padding à direita para afastar os botões */
 }
 
 li > .item-name {
@@ -128,4 +219,35 @@ li > .buttons {
   gap: 10px; /* Espaço entre os botões */
   justify-content: flex-end; /* Garante que os botões fiquem à direita */
   padding-left: 20px; /* Adiciona um pequeno espaço à esquerda dos botões */
+}
+
+p {
+  display: flex;
+  align-items: center;  /* Alinha os botões no centro verticalmente */
+  gap: 10px; /* Espaço entre os botões */
+}
+
+.update-item {
+  background-color: blue;
+  color: white;
+  font-size: 13px;
+  font-weight: bold;
+  width: auto;
+}
+
+
+
+.back-update-item {
+  background-color: #d9c6d9; 
+  color: black;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 13px;
+  font-weight: bold;
+}
+
+.back-update-item:hover {
+  background-color: #b2a0b2;
 }

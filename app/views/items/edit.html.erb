@@ -1,13 +1,15 @@
 <% content_for :title, "Editing Item" %>
 
-<h1>Editing Item for <%= @list.name %></h1>
+<div class="editing-title">
+  <h1>Editing Item</h1>
+</div>
 
 <%= form_for [@list, @item] do |f| %>
-  <%= f.label :name %>
+  <div style="display: flex; align-items: justify-content: center; gap: 10px; margin-left: 50px; margin-top: 30px">
   <%= f.text_field :name, value: @item.name %> <!-- Editando apenas o nome -->
-
-  <%= f.submit "Update Item" %>
+  <%= f.submit "Update", class: 'update-item' %>
+  <%= link_to "Go Back", @list, class: 'back-update-item' %>
+  </div>
 <% end %>
 
-<%= link_to "Back to List", @list %> <!-- Link de volta para a lista -->
 

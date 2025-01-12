@@ -14,7 +14,7 @@ class ItemsController < ApplicationController
   def create
     @item = @list.items.build(item_params)
     if @item.save
-      redirect_to @list, notice: "Item criado com sucesso!"
+      redirect_to @list, notice: "Item created successfully!"
     else
       render :new
     end
@@ -26,7 +26,7 @@ class ItemsController < ApplicationController
 
   def update
     if @item.update(item_params)
-      redirect_to @list, notice: "Item atualizado com sucesso!"
+      redirect_to @list, notice: "Item updated successfully!"
     else
       render :edit
     end
@@ -38,7 +38,6 @@ class ItemsController < ApplicationController
     respond_to do |format|
       format.turbo_stream { render(turbo_stream: turbo_stream.remove(@item)) }
     end
-  #  redirect_to @list, notice: "Item excluído com sucesso!" 
   end
 
   private
