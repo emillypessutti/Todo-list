@@ -1,24 +1,16 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Este é um projeto de uma aplicação web para gerenciamento de tarefas, onde os usuários podem criar, editar, excluir e visualizar listas de tarefas e os itens dentro dessas listas (CRUD). O objetivo deste projeto é facilitar o gerenciamento de atividades diárias por meio de uma interface simples e eficiente.
 
-Things you may want to cover:
+## Funcionalidades
+- Criação, Leitura, Edição e Exclusão de Tarefas e Itens (CRUD)
+- Validação de campos de entrada para garantir dados corretos
+  
+## Tecnologias Usadas
+- Ruby v3.3.6
+- Ruby on Rails Rails v8.0.1:
+- HTML, CSS
+- SQLite
+- GitHub Projects
 
-* Ruby version
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
