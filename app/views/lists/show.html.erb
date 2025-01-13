@@ -1,6 +1,3 @@
-<p style="color: green"><%= notice %></p>
-
-
 <h1><%= @list.name %></h1>
 
 <%= form_with(model: [@list, Item.new], local: true) do |form| %>
@@ -19,7 +16,7 @@
   <div style="margin-left: 10px;">
     <% @list.items.each do |item| %>
       <li id="<%= dom_id item %>">  
-        <span class="item-name"><%= item.name %></span> <!-- Nome do item -->
+        <span class="item-name"><%= item.name %></span>
         <div class="buttons">
           <%= link_to 'Edit', edit_list_item_path(@list, item), class: 'edit-button' %>
           <%= link_to 'Delete', list_item_path(@list, item), data: { turbo_method: :delete, turbo_confirm: 'Are you sure?' }, class: 'delete-item' %>

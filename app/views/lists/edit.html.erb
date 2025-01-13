@@ -8,6 +8,6 @@
   <div style="display: flex; align-items: justify-content: center; gap: 10px; margin-left: 50px; margin-top: 30px">
     <%= f.text_field :name, value: @list.name %>
     <%= f.submit "Update", class: 'update-list-button' %>
-    <%= link_to "Go Back", request.referer || lists_path, class: 'back-update-button' %>
+    <%= link_to "Go Back", request.referer || lists_path, class: 'update-back-button' %>
   </div>
 <% end %>

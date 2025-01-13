@@ -1,6 +1,12 @@
-<div id="<%= dom_id list %>">
+<div>
+  <div id="<%= dom_id list %>">
+    <p>
+      <%= list.name %>
+    </p>
+  </div>
   <p>
-    <%= list.name %>
+    <%= link_to "Show this task", list, class: 'show-list' %>
+    <%= link_to "Edit", edit_list_path(list), class: "edit-list-button" %>
+    <%= button_to 'Delete', list, method: :delete, data: { turbo_confirm: "Are you sure?" }, class: "delete-list" %>
   </p>
-
 </div>

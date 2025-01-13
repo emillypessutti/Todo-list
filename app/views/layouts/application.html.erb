@@ -25,6 +25,10 @@
   </head>
 
   <body>
+    <% if notice %>
+      <span class="notice"><%= notice %></span>
+    <% end %>
     <%= yield %>
   </body>
 </html>
+

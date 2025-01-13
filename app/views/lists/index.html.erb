@@ -1,11 +1,15 @@
-<p style="color: green"><%= notice %></p>
-
 <% content_for :title, "Lists" %>
 
 <h1>Tasks</h1>
 
-<!-- Formulário para criar nova lista -->
-<%= form_with(model: List.new, local: true) do |form| %>
+<%= form_with(model: @new_list, local: true) do |form| %>
+  <% if @new_list.errors.any? %>
+    <ul>
+      <% @new_list.errors.full_messages.each do |message| %>
+        <li><span class="error-notice"><%= message %></span></li>
+      <% end %>
+    </ul>
+  <% end %>
   <div style="display: flex; align-items: justify-content: center; gap: 10px; margin-left: 50px; margin-top: 30px">
     <%= form.text_field :name, class: "add-task-button", placeholder: "Add new task" %>
     <%= form.submit "Save", class: "save-button" %>
@@ -14,13 +18,6 @@
 
 <div id="lists">
   <% @lists.each do |list| %>
-    <div>
-      <%= render list %>
-      <p>
-        <%= link_to "Show this task", list, class: 'show-list' %>
-        <%= link_to "Edit", edit_list_path(list), class: "edit-list-button" %>
-        <%= button_to 'Delete', list, method: :delete, data: { turbo_confirm: "Are you sure?" }, class: "delete-list" %>
-      </p>
-    </div>
+    <%= render list %>
   <% end %>
 </div>

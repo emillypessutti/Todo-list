@@ -1,37 +1,36 @@
 class ListsController < ApplicationController
   before_action :set_list, only: %i[show edit update destroy]
 
-  # GET /lists or /lists.json
   def index
     @lists = List.all
+    @new_list = List.new
   end
 
-  # GET /lists/1 or /lists/1.json
   def show
-    @items = @list.items  # Carregar os itens da lista
+    @items = @list.items  
   end  
 
-  # GET /lists/1/edit
   def edit
-    @items = @list.items  # Carregar os itens da lista para edição
+    @items = @list.items 
   end
 
-  # POST /lists or /lists.json
   def create
-    @list = List.new(list_params)
+    @new_list = List.new(list_params)
 
     respond_to do |format|
-      if @list.save
-        format.html { redirect_to @list, notice: "Task was successfully created." }
-        format.json { render :show, status: :created, location: @list }
+      if @new_list.save
+        format.html { redirect_to @new_list, notice: "Task was successfully created." }
+        format.json { render :show, status: :created, location: @new_list }
       else
-        format.html { render :new, status: :unprocessable_entity }
-        format.json { render json: @list.errors, status: :unprocessable_entity }
+        format.html do
+          @lists = List.all
+          render :index, status: :unprocessable_entity
+        end
+        format.json { render json: @new_list.errors, status: :unprocessable_entity }
       end
     end
   end
 
-  # PATCH/PUT /lists/1 or /lists/1.json
   def update
     respond_to do |format|
       if @list.update(list_params)
@@ -44,7 +43,6 @@ class ListsController < ApplicationController
     end
   end
 
-  # DELETE /lists/1 or /lists/1.json
   def destroy
     @list.destroy
 
@@ -56,13 +54,11 @@ class ListsController < ApplicationController
 
   private
 
-    # Use callbacks to share common setup or constraints between actions.
     def set_list
-      @list = List.find(params[:id])  # Encontra a lista com base no ID passado
+      @list = List.find(params[:id]) 
     end
 
-    # Only allow a list of trusted parameters through.
     def list_params
-      params.require(:list).permit(:name)  # Permite o parâmetro name da lista
+      params.require(:list).permit(:name) 
     end
 end

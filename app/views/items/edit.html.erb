@@ -6,9 +6,9 @@
 
 <%= form_for [@list, @item] do |f| %>
   <div style="display: flex; align-items: justify-content: center; gap: 10px; margin-left: 50px; margin-top: 30px">
-  <%= f.text_field :name, value: @item.name %> <!-- Editando apenas o nome -->
+  <%= f.text_field :name, value: @item.name %>
   <%= f.submit "Update", class: 'update-item' %>
-  <%= link_to "Go Back", @list, class: 'back-update-item' %>
+  <%= link_to "Go Back", @list, class: 'update-back-item' %>
   </div>
 <% end %>
 

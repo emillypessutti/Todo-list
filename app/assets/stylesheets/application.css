@@ -1,15 +1,35 @@
-/* custom.css */
 body {
   font-family: Arial, sans-serif;
-  background-color: white; /* Cor de fundo mais suave */
-  color: black; /* Cor de texto mais suave */
+  background-color: white; 
+  color: black;
   margin-top: 50px;
 }
 
 h1 {
-  color: black; /* Cor suave para o título */
+  color: black;
   margin-left: 50px;
   margin-top: 80px;
+}
+
+.notice {
+  position:fixed;
+  top: 30px;
+  background-color: #f0fdf4;
+  color: #22c55e;
+  padding: 8px 12px;
+  border: none;
+  border-radius: 8px;
+  margin-left: 50px;
+}
+
+.error-notice {
+  top: 30px;
+  background-color: #FFB4BF;
+  color: #ff5353;
+  padding: 8px 12px;
+  border: none;
+  border-radius: 8px;
+  margin-left: 10px;
 }
 
 .editing-title {
@@ -24,7 +44,7 @@ h1 {
   font-weight: bold;
   width: auto;
   padding: 10px 15px;
-  border-radius: 8px; /* Altere o valor conforme desejado para arredondar o botão */
+  border-radius: 8px;
 }
 
 .save-item-button {
@@ -52,7 +72,7 @@ h1 {
 
 
 .edit-list-button {
-  background-color: #d1c0d1;; /* Vermelho pastel */
+  background-color: #d1c0d1;; 
   color: black;
   padding: 5px 10px;
   border: none;
@@ -60,7 +80,7 @@ h1 {
   cursor: pointer;
   font-size: 13px;
   font-weight: bold;
-  text-decoration: none; /* Remove o sublinhado */
+  text-decoration: none;
 }
 
 .edit-list-button:hover {
@@ -74,7 +94,7 @@ h1 {
   width: auto;
 }
 
-.back-update-button {
+.update-back-button {
   background-color: #d9c6d9; 
   color: black;
   padding: 10px 15px;
@@ -85,30 +105,18 @@ h1 {
   font-weight: bold;
 }
 
-.back-update-button:hover {
+.update-back-button:hover {
   background-color: #b2a0b2;
 }
 
 input[type="text"], input, select, textarea {
   border: none;
-  border-radius: 8px; /* Arredonda os campos de entrada */
+  border-radius: 8px; 
   box-shadow: 0 3px 12px rgba(190, 190, 190, 0.638);
-  padding: 10px 15px; /* Adiciona um pouco de preenchimento dentro do campo */
+  padding: 10px 15px; 
   width: 250px;
-  font-size: 14px; /* Ajusta o tamanho da fonte */
+  font-size: 14px; 
 }
-
-/*#new-list-form {
-  display: flex;
-  flex-direction: column;
-  align-items: center; 
-  justify-content: center; 
-  gap: 10px;
-  margin-bottom: 20px; 
-  width: 100%; 
-  max-width: 400px; 
-  margin-top: 20px; 
-} */
 
 #lists {
   display: flex;
@@ -120,8 +128,8 @@ input[type="text"], input, select, textarea {
 }
 
 #lists div {
-  background-color: white; /* Mantido branco para o fundo dos itens */
-  border: 2px solid transparent; /* Cor de borda mais suave */
+  background-color: white; 
+  border: 2px solid transparent;
   padding: 15px;
   border-radius: 8px;
   width: 250px;
@@ -157,21 +165,21 @@ button {
 }
 
 button:hover {
-  background-color: #DB4A4A; /* Cor mais escura do botão ao passar o mouse */
+  background-color: #DB4A4A; 
 }
 
 a {
-  text-decoration: none; /* Remove o sublinhado de todos os links */
+  text-decoration: none; 
   color: black;
   font-size: 14px;
 }
 
 .itens {
-  margin-bottom: 20px; /* Adiciona espaço entre os itens */
+  margin-bottom: 20px;
 }
 
 .delete-item {
-  background-color: #E78787; /* Vermelho pastel */
+  background-color: #E78787;
   color: black;
   padding: 5px 10px;
   border: none;
@@ -179,16 +187,16 @@ a {
   cursor: pointer;
   font-size: 13px;
   font-weight: bold;
-  text-decoration: none; /* Remove o sublinhado */
+  text-decoration: none; 
   margin-right: 20px;
 }
 
 .delete-item:hover {
-  background-color: #DB4A4A; /* Vermelho mais escuro */
+  background-color: #DB4A4A;
 }
 
 .edit-button {
-  background-color: #d1c0d1; /* Vermelho pastel */
+  background-color: #d1c0d1;
   color: black;
   padding: 5px 10px;
   border: none;
@@ -196,7 +204,7 @@ a {
   cursor: pointer;
   font-size: 13px;
   font-weight: bold;
-  text-decoration: none; /* Remove o sublinhado */
+  text-decoration: none;
 }
 
 .edit-button:hover {
@@ -205,26 +213,26 @@ a {
 
 li {
   display: flex;
-  align-items: center; /* Alinha os itens na mesma linha */
-  margin-bottom: 10px; /* Distância entre os itens */
-  padding-right: 1170px; /* Adiciona um pequeno padding à direita para afastar os botões */
+  align-items: center; 
+  margin-bottom: 10px; 
+  padding-right: 1170px;
 }
 
 li > .item-name {
-  flex-grow: 1; /* Faz o nome do item ocupar o espaço disponível */
+  flex-grow: 1;
 }
 
 li > .buttons {
   display: flex;
-  gap: 10px; /* Espaço entre os botões */
-  justify-content: flex-end; /* Garante que os botões fiquem à direita */
-  padding-left: 20px; /* Adiciona um pequeno espaço à esquerda dos botões */
+  gap: 10px; 
+  justify-content: flex-end;
+  padding-left: 20px;
 }
 
 p {
   display: flex;
-  align-items: center;  /* Alinha os botões no centro verticalmente */
-  gap: 10px; /* Espaço entre os botões */
+  align-items: center;  
+  gap: 10px;
 }
 
 .update-item {
@@ -237,7 +245,7 @@ p {
 
 
 
-.back-update-item {
+.update-back-item {
   background-color: #d9c6d9; 
   color: black;
   padding: 10px 15px;
@@ -248,6 +256,6 @@ p {
   font-weight: bold;
 }
 
-.back-update-item:hover {
+.update-back-item:hover {
   background-color: #b2a0b2;
 }

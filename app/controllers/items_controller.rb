@@ -1,15 +1,6 @@
 class ItemsController < ApplicationController
   before_action :set_list
-  before_action :set_item, only: %i[edit update destroy]
-
-  # Ação index para exibir os itens da lista
-  def index
-    @items = @list.items
-  end
-
-  def new
-    @item = @list.items.build
-  end  
+  before_action :set_item, only: %i[edit update destroy] 
 
   def create
     @item = @list.items.build(item_params)
@@ -18,10 +9,6 @@ class ItemsController < ApplicationController
     else
       render :new
     end
-  end
-  
-  def edit
-    # A lógica necessária já está no `set_item`
   end
 
   def update
@@ -32,7 +19,6 @@ class ItemsController < ApplicationController
     end
   end
 
-  # Ação destroy para excluir o item
   def destroy
     @item.destroy
     respond_to do |format|
